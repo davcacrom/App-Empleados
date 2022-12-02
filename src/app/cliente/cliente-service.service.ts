@@ -81,6 +81,10 @@ export class ClienteServiceService {
     this.clientes.set(index, c);
   }
 
+  deleteCliente(index:number):void{
+    this.clientes.delete(index);
+  }
+
   getClientes():Map<number,Cliente>{
     return this.clientes;
   }
