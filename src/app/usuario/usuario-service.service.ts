@@ -5,5 +5,23 @@ import { Injectable } from '@angular/core';
 })
 export class UsuarioServiceService {
 
-  constructor() { }
+  constructor() {
+
+   }
+
+   public guardarUsuario (key: string, value: string){
+    localStorage.setItem(key, value);
+   }
+
+   public mostrarUsuario(key: string){
+    return localStorage.getItem(key);
+   }
+
+   public borrarUsuario(key: string){
+    localStorage.removeItem(key);
+   }
+
+   public borrarTodo(){
+    localStorage.clear();
+   }
 }
