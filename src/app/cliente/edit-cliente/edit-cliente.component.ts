@@ -15,6 +15,9 @@ export class EditClienteComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  submit( ){
+
+  }
 
 
 }
