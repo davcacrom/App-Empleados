@@ -10,7 +10,8 @@ import { RegistrarUsuarioComponent } from '../usuario/registrar-usuario/registra
 const routes: Routes = [
   {
     path:'',
-    component: LoginComponent
+    component: LoginComponent,
+    pathMatch:'full'
   }, {
     path:'usuario/registro',
     component: RegistrarUsuarioComponent
