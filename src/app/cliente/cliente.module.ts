@@ -5,6 +5,7 @@ import { ListaComponent } from './lista/lista.component';
 import { VerClienteComponent } from './ver-cliente/ver-cliente.component';
 import { FormularioClienteComponent } from './components/formulario-cliente/formulario-cliente.component';
 import { EditClienteComponent } from './edit-cliente/edit-cliente.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -16,8 +17,19 @@ import { EditClienteComponent } from './edit-cliente/edit-cliente.component';
     FormularioClienteComponent,
     EditClienteComponent
   ],
+
+  exports:[
+    RegistrarClienteComponent,
+    ListaComponent,
+    VerClienteComponent,
+    FormularioClienteComponent,
+    EditClienteComponent
+  ],
+
   imports: [
-    CommonModule
+    CommonModule,
+    FormModule,
+    RouterModule
   ]
 })
 export class ClienteModule { }
