@@ -26,9 +26,6 @@ const routes: Routes = [
   },{
     path:'cliente/:id',
     component: VerClienteComponent
-  },{
-    path:'cliente/registro',
-    component: RegistrarUsuarioComponent
   },
 ];
 

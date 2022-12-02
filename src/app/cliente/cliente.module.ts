@@ -7,6 +7,7 @@ import { FormularioClienteComponent } from './components/formulario-cliente/form
 import { EditClienteComponent } from './edit-cliente/edit-cliente.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ClienteServiceService } from './cliente-service.service';
 
 
 
@@ -27,8 +28,11 @@ import { FormsModule } from '@angular/forms';
     EditClienteComponent
   ],imports:[
     CommonModule,
-    FormsModule,
-    RouterModule
+    RouterModule,
+    FormsModule
+  ],
+  providers: [
+    ClienteServiceService
   ]
 })
 export class ClienteModule { }

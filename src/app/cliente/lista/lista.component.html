@@ -1,1 +1,29 @@
-<p>lista works!</p>
+<div class="row">
+  <div class="col">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+          <th>Email</th>
+          <th>Telefono</th>
+          <th>Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cliente of clientes | keyvalue">
+          <td>{{cliente.key}}</td>
+          <td>{{cliente.value.nombre}}</td>
+          <td>{{cliente.value.apellidos}}</td>
+          <td>{{cliente.value.e_mail}}</td>
+          <td>{{cliente.value.telefono}}</td>
+          <td>
+            <button routerLink="/cliente/edit/{{cliente.key}}">Edit</button>
+            <button (click)="borrarCliente(cliente.key)">Borrar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
