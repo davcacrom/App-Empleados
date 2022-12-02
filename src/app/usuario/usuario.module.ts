@@ -12,14 +12,13 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     RegistrarUsuarioComponent
   ],
-  exports:[
-    LoginComponent,
-    RegistrarUsuarioComponent
-  ],
   imports: [
     CommonModule,
     FormsModule,
     RouterModule
+  ],exports:[
+    LoginComponent,
+    RegistrarUsuarioComponent
   ]
 })
 export class UsuarioModule { }

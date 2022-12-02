@@ -8,6 +8,7 @@ import { EditClienteComponent } from './edit-cliente/edit-cliente.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ClienteServiceService } from './cliente-service.service';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -26,12 +27,11 @@ import { ClienteServiceService } from './cliente-service.service';
     VerClienteComponent,
     FormularioClienteComponent,
     EditClienteComponent
-  ],
-
-  imports: [
+  ],imports:[
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
   providers: [
     ClienteServiceService

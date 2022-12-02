@@ -22,11 +22,6 @@ export class UsuarioServiceService {
     localStorage.removeItem(key);
    }
 
-   public borrarTodo(){
-    localStorage.clear();
-   }
-
-   
 
   usuarios:Usuario[] = [
     {
@@ -35,4 +30,24 @@ export class UsuarioServiceService {
       password: "admin"
     }]
 
+
+  public guardarDato(key:string, value:string){
+    localStorage.setItem(key, value);
+  }
+
+  public mostrarDato(key:string){
+    return localStorage.getItem(key);
+  }
+
+  public borrarDato(key:string){
+    localStorage.removeItem(key);
+  }
+
+  public borrarTodo(){
+    localStorage.clear();
+  }
+
+  public getAllUsers():Usuario[]{
+    return this.usuarios;
+  }
 }

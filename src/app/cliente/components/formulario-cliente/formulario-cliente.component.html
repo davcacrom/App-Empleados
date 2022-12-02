@@ -1,1 +1,40 @@
-<p>formulario-cliente works!</p>
+<form class="mt-5">
+  <div class="form-group">
+    <label for="nombre">Nombre</label>
+    <input
+      type="nombre"
+      [(ngModel)]="cliente.nombre"
+      class="form-control"
+      name="nombre"
+    />
+  </div>
+  <div class="form-group">
+    <label for="apellidos">Apelidos</label>
+    <input
+      type="apellidos"
+      [(ngModel)]="cliente.apellidos"
+      class="form-control"
+      name="apellidos"
+    />
+  </div>
+  <div class="form-group">
+    <label for="e_mail">E-mail</label>
+    <input
+      type="e_mail"
+      [(ngModel)]="cliente.e_mail"
+      class="form-control"
+      name="e_mail"
+    />
+  </div>
+  <div class="form-group">
+    <label for="telefono">Telefono</label>
+    <input
+      type="telefono"
+      [(ngModel)]="cliente.telefono"
+      class="form-control"
+      name="telefono"
+    />
+  </div>
+
+  <button type="submit()" (click)="submit()" class="btn btn-primary mt-2">Guardar</button>
+</form>
