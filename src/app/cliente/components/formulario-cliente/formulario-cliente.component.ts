@@ -23,6 +23,7 @@ export class FormularioClienteComponent implements OnInit {
   }
 
   submit(){
+
     this.onNuevoCliente.emit(this.cliente)
   }
 

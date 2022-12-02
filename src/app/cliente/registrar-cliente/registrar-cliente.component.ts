@@ -18,8 +18,9 @@ export class RegistrarClienteComponent implements OnInit {
   }
 
   submit( cliente : Cliente):void{
-    console.log(cliente)
     //llamar servicio añadir
+    this.clienteService.addCliente(cliente);
+    console.log(this.clienteService.getClientes());
 
   }
 
