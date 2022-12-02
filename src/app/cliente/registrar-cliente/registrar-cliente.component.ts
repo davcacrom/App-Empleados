@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ClienteServiceService } from '../cliente-service.service';
 import { Cliente } from '../modelo/cliente.interface';
 
@@ -17,8 +17,10 @@ export class RegistrarClienteComponent implements OnInit {
     this.clienteRegistro
   }
 
-  submit():void{
+  submit( cliente : Cliente):void{
     //llamar servicio añadir
+    this.clienteService.addCliente(cliente);
+    console.log(this.clienteService.getClientes());
 
   }
 

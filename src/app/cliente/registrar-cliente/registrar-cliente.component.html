@@ -1,6 +1,6 @@
 <!-- <p>registrar-cliente works!</p> -->
 <div class="col-md-6"></div>
 <div class="col-md-4 justify content">
-  <h2>EDITAR CLIENTES</h2>
-  <app-formulario-cliente></app-formulario-cliente>
+  <h2>REGISTRAR CLIENTES</h2>
+  <app-formulario-cliente (onNuevoCliente)="submit($event)"></app-formulario-cliente>
 </div>

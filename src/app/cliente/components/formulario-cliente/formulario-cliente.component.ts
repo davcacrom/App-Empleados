@@ -9,7 +9,12 @@ import { Cliente } from '../../modelo/cliente.interface';
 })
 export class FormularioClienteComponent implements OnInit {
 
-  cliente!:Cliente;
+  cliente:Cliente = {
+    nombre:"",
+    apellidos:"",
+    telefono:0,
+    e_mail:""
+  };
   constructor() { }
 
   @Output() onNuevoCliente : EventEmitter<Cliente> = new EventEmitter();
@@ -18,6 +23,7 @@ export class FormularioClienteComponent implements OnInit {
   }
 
   submit(){
+
     this.onNuevoCliente.emit(this.cliente)
   }
 
