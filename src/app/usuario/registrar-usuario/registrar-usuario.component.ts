@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Usuario } from '../modelo/usuario.interface';
 import { UsuarioServiceService } from '../usuario-service.service';
 
 @Component({
@@ -8,6 +9,12 @@ import { UsuarioServiceService } from '../usuario-service.service';
   ]
 })
 export class RegistrarUsuarioComponent implements OnInit {
+
+  nuevoUsuario: Usuario = {
+    username: "",
+    e_mail: "",
+    password: ""
+  }
 
   constructor(private usuarioService: UsuarioServiceService) { }
 
