@@ -18,7 +18,10 @@
           <td>{{cliente.value.apellidos}}</td>
           <td>{{cliente.value.e_mail}}</td>
           <td>{{cliente.value.telefono}}</td>
-          <td></td>
+          <td>
+            <button routerLink="/cliente/edit/{{cliente.key}}">Edit</button>
+            <button (click)="borrarCliente(cliente.key)">Borrar</button>
+          </td>
         </tr>
       </tbody>
     </table>
