@@ -81,4 +81,8 @@ export class ClienteServiceService {
     this.clientes.set(index, c);
   }
 
+  getClientes():Map<number,Cliente>{
+    return this.clientes;
+  }
+
 }

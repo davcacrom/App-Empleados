@@ -10,13 +10,13 @@ import { Cliente } from '../modelo/cliente.interface';
 })
 export class ListaComponent implements OnInit {
 
-  clientes:Map<number,Cliente>;
+  clientes:Map<number,Cliente>=new Map<number,Cliente>([]);
 
   constructor(private servicio:ClienteServiceService) { }
 
   ngOnInit(): void {
 
-    this.servicio.buscarPais(termino);
+    this.clientes=this.servicio.getClientes();
 
   }
 
