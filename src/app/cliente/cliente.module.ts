@@ -6,6 +6,7 @@ import { VerClienteComponent } from './ver-cliente/ver-cliente.component';
 import { FormularioClienteComponent } from './components/formulario-cliente/formulario-cliente.component';
 import { EditClienteComponent } from './edit-cliente/edit-cliente.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -24,11 +25,9 @@ import { RouterModule } from '@angular/router';
     VerClienteComponent,
     FormularioClienteComponent,
     EditClienteComponent
-  ],
-
-  imports: [
+  ],imports:[
     CommonModule,
-    FormModule,
+    FormsModule,
     RouterModule
   ]
 })

@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './rutas/app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { UsuarioModule } from './usuario/usuario.module';
+import { ClienteModule } from './cliente/cliente.module';
 
 @NgModule({
   declarations: [
@@ -10,6 +13,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+    UsuarioModule,
+    ClienteModule,
     AppRoutingModule
   ],
   providers: [],
