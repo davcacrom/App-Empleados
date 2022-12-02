@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Cliente } from '../modelo/cliente.interface';
 
 @Component({
   selector: 'app-edit-cliente',
@@ -8,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditClienteComponent implements OnInit {
 
+  @Input() cliente!:Cliente;
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
 
 }

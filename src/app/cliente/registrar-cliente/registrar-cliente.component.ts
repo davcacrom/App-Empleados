@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ClienteServiceService } from '../cliente-service.service';
+import { Cliente } from '../modelo/cliente.interface';
 
 @Component({
   selector: 'app-registrar-cliente',
@@ -8,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrarClienteComponent implements OnInit {
 
-  constructor() { }
+  clienteRegistro!:Cliente;
+  constructor( private clienteService:ClienteServiceService) { }
 
   ngOnInit(): void {
+    this.clienteRegistro
+  }
+
+  submit():void{
+    //llamar servicio añadir
+
   }
 
 }
