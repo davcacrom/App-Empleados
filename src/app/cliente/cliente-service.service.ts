@@ -72,4 +72,13 @@ export class ClienteServiceService {
   ]);
 
   constructor() {}
+
+  addCliente( c:Cliente): void{
+    this.clientes.set( this.clientes.size, c);
+  }
+
+  editCliente( index:number, c:Cliente):void {
+    this.clientes.set(index, c);
+  }
+
 }
