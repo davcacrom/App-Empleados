@@ -6,17 +6,16 @@ import { UsuarioServiceService } from '../usuario-service.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styles: [
-  ]
+  styles: [],
 })
 export class LoginComponent implements OnInit {
+  username: string = '';
+  password: string = '';
+  users: Usuario[] = [];
+  errorUser: boolean = false;
+  errorPassword: boolean = false;
 
-  username:string='';
-  password:string='';
-  users:Usuario[]=[];
-  correctUser: boolean = false;
-
-  constructor(private ls: UsuarioServiceService, private router: Router) { }
+  constructor(private ls: UsuarioServiceService, private router: Router) {}
 
   ngOnInit(): void {
     if (this.ls.mostrarDato('user') != null) {
@@ -24,13 +23,21 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  public login():void{
-    this.users = this.ls.getAllUsers().filter(x => x.username == x.username);
-    console.log(this.users.length);
-    if(this.users.length == 1){
-      if(this.users[0].password == this.password){
-        this.ls.guardarDato("user", this.username);
+  public login(): void {
+    this.users = this.ls
+      .getAllUsers()
+      .filter((x) => x.username == this.username);
+    if (this.users.length == 1) {
+      this.errorUser = false;
+      if (this.users[0].password == this.password) {
+        this.ls.guardarDato('user', this.username);
+        this.router.navigate(['/cliente/lista']);
+        this.errorPassword = false;
+      } else {
+        this.errorPassword = true;
       }
+    } else {
+      this.errorUser = true;
     }
   }
 }
