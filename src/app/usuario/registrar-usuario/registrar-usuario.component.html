@@ -2,21 +2,21 @@
   <div class="col-md-6"></div>
   <div class="col-md-4 justify-content">
     <h2>REGISTRO DE USUARIO</h2>
-    <form class="mt-4">
+    <form (ngSubmit)="guardar()" class="mt-4">
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="Email">
+        <input type="email" name="mail" class="form-control" id="email" placeholder="Email" [(ngModel)]="nuevoUsuario.e_mail">
       </div>
       <div class="form-group">
         <label class="mt-3" for="username">Usuario</label>
-        <input type="email" class="form-control" id="username" placeholder="Usuario">
+        <input type="email" name="usr" class="form-control" id="username" [(ngModel)]="nuevoUsuario.username" placeholder="Usuario">
       </div>
       <div class="form-group mb-2">
         <label class="mt-3" for="password">Contraseña</label>
-        <input type="password" class="form-control" id="password" placeholder="Contraseña">
+        <input type="password" [(ngModel)]="nuevoUsuario.password" name="password" class="form-control" id="password" placeholder="Contraseña">
       </div>
-      <a href="#" routerLink="/usuario/login" routerLinkActive="router-link-active" >¿Ya estás registrado? Inicia sesión</a><br>
-      <button type="submit" class="btn btn-primary mt-2">Registrarse</button>
+      <a href="#" routerLink="/" routerLinkActive="router-link-active" >¿Ya estás registrado? Inicia sesión</a><br>
+      <button type="submit" routerLink="/" class="btn btn-primary mt-2">Registrarse</button>
     </form>
   </div>
   <div class="col-md-3"></div>

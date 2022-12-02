@@ -10,8 +10,8 @@ export class UsuarioServiceService {
 
    }
 
-   public guardarUsuario (key: string, value: string){
-    localStorage.setItem(key, value);
+   public guardarUsuario (key: string, value: Usuario){
+    localStorage.setItem(key, value.username);
    }
 
    public mostrarUsuario(key: string){
@@ -25,7 +25,9 @@ export class UsuarioServiceService {
    public borrarTodo(){
     localStorage.clear();
    }
+
    
+
   usuarios:Usuario[] = [
     {
       username:"admin",

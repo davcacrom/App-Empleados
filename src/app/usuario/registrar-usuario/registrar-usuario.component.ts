@@ -21,4 +21,12 @@ export class RegistrarUsuarioComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  guardar(): void {
+    this.usuarioService.guardarUsuario("1", this.nuevoUsuario);
+    var indice = this.usuarioService.usuarios.length;
+    this.usuarioService.usuarios[indice+1] = this.nuevoUsuario;
+    console.log(JSON.stringify(this.nuevoUsuario));
+
+  }
+
 }
