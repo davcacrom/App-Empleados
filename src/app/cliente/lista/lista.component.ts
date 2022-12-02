@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ClienteServiceService } from '../cliente-service.service';
+import { Cliente } from '../modelo/cliente.interface';
 
 @Component({
   selector: 'app-lista',
@@ -8,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaComponent implements OnInit {
 
-  constructor() { }
+  clientes:Map<number,Cliente>=new Map<number,Cliente>([]);
+
+  constructor(private servicio:ClienteServiceService) { }
 
   ngOnInit(): void {
+
+    this.clientes=this.servicio.getClientes();
+
   }
 
 }
