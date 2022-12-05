@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ClienteServiceService } from '../cliente-service.service';
 import { Cliente } from '../modelo/cliente.interface';
 
 @Component({
@@ -9,15 +11,18 @@ import { Cliente } from '../modelo/cliente.interface';
 })
 export class EditClienteComponent implements OnInit {
 
-  @Input() cliente!:Cliente;
-  constructor() { }
+  key!:number;
+
+  constructor(private servicio:ClienteServiceService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.key = Number(this.route.snapshot.paramMap.get('id'));
   }
 
-  submit( ){
-
+  editar(cliente:Cliente):void{
+    //console.log(this.cliente);
+    this.servicio.editCliente(this.key,cliente);
+    console.log('key editar',this.key);
+    console.log('cliente editar',cliente);
   }
-
-
 }
