@@ -22,10 +22,11 @@ export class RegistrarUsuarioComponent implements OnInit {
   }
 
   guardar(): void {
-    this.usuarioService.guardarUsuario("1", this.nuevoUsuario);
-    var indice = this.usuarioService.usuarios.length;
-    this.usuarioService.usuarios[indice+1] = this.nuevoUsuario;
+    //this.usuarioService.guardarUsuario("1", this.nuevoUsuario);
+    //var indice = this.usuarioService.usuarios.length;
+    this.usuarioService.usuarios.push(this.nuevoUsuario);
     console.log(JSON.stringify(this.nuevoUsuario));
+    console.log(this.usuarioService.usuarios)
 
   }
 

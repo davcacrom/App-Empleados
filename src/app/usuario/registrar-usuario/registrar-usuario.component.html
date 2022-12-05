@@ -2,7 +2,7 @@
   <div class="col-md-6"></div>
   <div class="col-md-4 justify-content">
     <h2>REGISTRO DE USUARIO</h2>
-    <form (ngSubmit)="guardar()" class="mt-4">
+    <form class="mt-4">
       <div class="form-group">
         <label for="email">Email</label>
         <input type="email" name="mail" class="form-control" id="email" placeholder="Email" [(ngModel)]="nuevoUsuario.e_mail">
@@ -16,7 +16,7 @@
         <input type="password" [(ngModel)]="nuevoUsuario.password" name="password" class="form-control" id="password" placeholder="Contraseña">
       </div>
       <a href="#" routerLink="/" routerLinkActive="router-link-active" >¿Ya estás registrado? Inicia sesión</a><br>
-      <button type="submit" routerLink="/" class="btn btn-primary mt-2">Registrarse</button>
+      <button type="submit" (click)="guardar()" routerLink="/" class="btn btn-primary mt-2">Registrarse</button>
     </form>
   </div>
   <div class="col-md-3"></div>
