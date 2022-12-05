@@ -21,8 +21,8 @@
           <td>{{cliente.value.e_mail}}</td>
           <td>{{cliente.value.telefono}}</td>
           <td>
-            <button routerLink="/cliente/edit/{{cliente.key}}">Edit</button>
-            <button (click)="borrarCliente(cliente.key)">Borrar</button>
+            <button class="btn btn-primary" routerLink="/cliente/edit/{{cliente.key}}">Edit</button>
+            <button class="btn btn-danger m-1" (click)="borrarCliente(cliente.key)">Borrar</button>
           </td>
         </tr>
       </tbody>
