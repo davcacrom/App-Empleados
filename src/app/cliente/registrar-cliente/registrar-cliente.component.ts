@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import {  Router } from '@angular/router';
 import { ClienteServiceService } from '../cliente-service.service';
 import { Cliente } from '../modelo/cliente.interface';
 
@@ -11,7 +12,7 @@ import { Cliente } from '../modelo/cliente.interface';
 export class RegistrarClienteComponent implements OnInit {
 
   clienteRegistro!:Cliente;
-  constructor( private clienteService:ClienteServiceService) { }
+  constructor( private clienteService:ClienteServiceService, private router: Router) { }
 
   ngOnInit(): void {
     this.clienteRegistro
@@ -20,7 +21,7 @@ export class RegistrarClienteComponent implements OnInit {
   submit( cliente : Cliente):void{
     //llamar servicio añadir
     this.clienteService.addCliente(cliente);
-    console.log(this.clienteService.getClientes());
+    this.router.navigate(["/cliente/lista"]);
 
   }
 
