@@ -21,11 +21,6 @@ export class ListaComponent implements OnInit {
 
   }
 
-  editarCliente(key:number){
-
-    console.log(`Editando cliente ${key}`);
-  }
-
   borrarCliente(key:number){
 
     console.log(`Borrando cliente ${key}`);
