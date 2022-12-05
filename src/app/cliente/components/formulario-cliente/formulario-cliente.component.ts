@@ -18,6 +18,7 @@ export class FormularioClienteComponent implements OnInit {
   constructor() { }
 
   @Output() onNuevoCliente : EventEmitter<Cliente> = new EventEmitter();
+  @Output() onEditarCliente : EventEmitter<Cliente> = new EventEmitter();
 
   ngOnInit(): void {
   }
@@ -25,6 +26,11 @@ export class FormularioClienteComponent implements OnInit {
   submit(){
 
     this.onNuevoCliente.emit(this.cliente)
+  }
+
+  submit1(){
+    this.onEditarCliente.emit(this.cliente);
+    console.log('cliente en formulario',this.cliente);
   }
 
 }

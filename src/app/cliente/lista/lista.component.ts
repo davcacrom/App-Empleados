@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { OuterSubscriber } from 'rxjs/internal/OuterSubscriber';
 import { ClienteServiceService } from '../cliente-service.service';
 import { Cliente } from '../modelo/cliente.interface';
 
@@ -23,8 +24,6 @@ export class ListaComponent implements OnInit {
   editarCliente(key:number){
 
     console.log(`Editando cliente ${key}`);
-
-
   }
 
   borrarCliente(key:number){
